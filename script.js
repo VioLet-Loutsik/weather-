@@ -7,18 +7,7 @@
 // <img src="./images/${x[0].cod}.png">
 // `
 // weather.innerHTML = y;
-// как вместо москоу подставлять др город - инпут +...
-// функция в линке
 
-// let buttonFindOut = document.querySelectorAll('.buttonFindOut')
-// buttonFindOut.addEventListener('click', press)
-// function press() {
-//   let inputCity = document.querySelector('.inputCity').value
-//   // value - содержимое инпута
-//   console.log(buttonFindOut)
-// }
-
-// let inputCity = 'Chisinau'
 
 let buttonFindOut = document.querySelector(".buttonFindOut");
 buttonFindOut.addEventListener("click", press);
@@ -27,7 +16,6 @@ function press() {
   // проверка на пустое поле
   if (inputCity == "") {
     inputCity = "Chisinau";
-    // alert ('Introduce the city')
   } else {
     console.log(inputCity);
   }
@@ -47,7 +35,6 @@ function translateInput(inputCity) {
     let infoGrades = (info.main.temp - 273.15).toFixed(1);
     let minGrades = (info.main.temp_min - 273.15).toFixed(1);
     let maxGrades = (info.main.temp_max - 273.15).toFixed(1);
-    // console.log(infoGrades);
     // вывод картинки иконки
     let iconWeather = info.weather[0].icon;
     console.log(iconWeather);
@@ -56,7 +43,6 @@ function translateInput(inputCity) {
     let descriptionIcon = info.weather[0].description;
     // стандарты видимости - закрашивание в разные цвета
     // через тернарный оператор
-    // let visibilityInfo = 300  for test
     let visibilityInfo = info.visibility;
     let visibilityColor =
       visibilityInfo >= 500
@@ -68,9 +54,6 @@ function translateInput(inputCity) {
         : "";
     let x = info.sys.sunrise;
     let sunRise1  = new Date(x * 1000);
-    // let sunRiseHours = sunRise1.getHours();
-    // let sunRiseMinuts = sunRise1.getMinutes();
-    // let sunRise = sunRiseHours + sunRiseMinuts;
     let sunRise = sunRise1.getHours() + '.' + sunRise1.getMinutes(); 
     let y = info.sys.sunset;
     let sunSet1 = new Date(y * 1000);
@@ -108,10 +91,10 @@ function translateInput(inputCity) {
 </div>
 <div>
 <p>Humidity: ${info.main.humidity}</p>
-<p>Pressure, inHg::${info.main.pressure}</p>
+<p>Pressure: ${info.main.pressure} mmHg</p>
 </div>
 <div>
-<p>Wind speed: ${info.wind.speed}</p>
+<p>Wind speed: ${info.wind.speed} m/s</p>
 <p></p>
 </div>
 <div>
