@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  /* убирает скрол */
+  /* overflow-y: hidden;   */
+  background-image: url(../images/map3.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+.enterCity {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: fit-content;
+  padding: 3%;
+}
+#locationImage {
+  width: 4%;
+  height: 4%;
+  padding-top: 1.4%;
+  animation: blink 2s infinite;
+}
+@keyframes blink {
+  49% {
+    opacity: 0;
+  }
+}
+.buttonFindOut {
+  position: relative;
+  border: none;
+  background-color: rgb(140, 205, 228);
+  border-radius: 25px;
+  padding: 12px 20px;
+  overflow: hidden; /* обрезаем все что выходит за края */
+}
+button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 25px;
+  background: rgba(9, 150, 193, 0.407);
+  transition: all 1s ease;
+}
+button:hover:before {
+  width: 100%;
+}
+.inputCity {
+  border: none;
+  border-bottom: 2px solid black;
+  padding-left: 2%;
+  outline: none; /* отключает края бордеры инпута*/
+}
+::placeholder {
+  color: rgba(26, 24, 24, 0.477);
+  font-size: 110%;
+}
+.textCity {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: rgb(22, 83, 175);
+  padding: 2%;
+}
+.descriptionIcon {
+  font-size: 20px;
+  padding: 2% 5%;
+}
+.weather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+}
+.defineWeatherImg {
+  /* размер иконки погоды */
+  height: 100px;
+  width: 100px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.defineWeatherImg img {
+  width: 100%;
+  height: 100%;
+}
+.locationCity {
+  display: flex;
+  justify-content: center;
+}
+.degreesWheather {
+  margin-left: 5%;
+  color: rgb(10, 67, 117);
+  font-size: 80px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.minmaxTemp {
+  display: flex;
+  flex-direction: row;
+  font-size: 40px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.infoWheather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 2%;
+  color: rgb(6, 43, 107);
+}
+.styleWeather {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  /* height: 500px; высота в height ограничивает див поэтому это не задается для дива а только для картинок*/
+  background-size: cover; /* изображение на весь див*/
+  background-position: center;
+  box-shadow: inset 0 0 25px;
+  /* color: rgb(51, 182, 238); */
+  color: rgb(14, 121, 182);
+}
+.resultImage {
+  height: 200px;
+  width: 400px;
+  background-image: url(../images/air_ball.png);
+  background-repeat: no-repeat;
+}
+/* анимация */
+.resultImage {
+  animation: pulsing 2s infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes pulsing {
+  /* начало анимации - т.е. счего начнется */
+  0% {
+    transform: translateX(0px);
+  }
+  /* как закончится анимация */
+  100% {
+    transform: translateX(60px);
+  }
+}
+.bgvisibility {
+  background-color: aqua;
+  width: fit-content;
+}
+.bgvisibilityRed {
+  background-color: red;
+  width: fit-content;
+}
+
+.bgvisibilityOrange {
+  background-color: orange;
+  width: fit-content;
+}
+.bgvisibilityBlue {
+  background-color: rgb(21, 120, 220);
+  width: fit-content;
+}
+@media (max-width: 768px) {
+  .infoWheather {
+    flex-direction: column;
+  }
+}
