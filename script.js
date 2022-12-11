@@ -47,7 +47,7 @@ function translateInput(inputCity) {
     let infoGrades = (info.main.temp - 273.15).toFixed(1);
     let minGrades = (info.main.temp_min - 273.15).toFixed(1);
     let maxGrades = (info.main.temp_max - 273.15).toFixed(1);
-    console.log(infoGrades);
+    // console.log(infoGrades);
     // вывод картинки иконки
     let iconWeather = info.weather[0].icon;
     console.log(iconWeather);
