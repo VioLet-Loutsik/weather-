@@ -124,28 +124,40 @@ button:hover:before {
   background-size: cover; /* изображение на весь див*/
   background-position: center;
   box-shadow: inset 0 0 25px;
-  /* color: rgb(51, 182, 238); */
   color: rgb(14, 121, 182);
 }
+.imageHouse{
+  /* position: relative; */
+  /* width: 50%; */
+  /* border: 1px solid rgb(19, 25, 202); */
+}
 .resultImage {
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid red; */
   height: 200px;
-  width: 400px;
+  width: 160px;
   background-image: url(../images/air_ball.png);
   background-repeat: no-repeat;
 }
 /* анимация */
 .resultImage {
-  animation: pulsing 2s infinite;
+  animation: pulsing 4s infinite;
   animation-direction: alternate-reverse;
 }
+
+
 @keyframes pulsing {
   /* начало анимации - т.е. счего начнется */
   0% {
-    transform: translateX(0px);
+    transform: translateX(-200px);
   }
   /* как закончится анимация */
   100% {
-    transform: translateX(60px);
+    transform: translateX(-100px);
   }
 }
 .bgvisibility {
@@ -168,5 +180,28 @@ button:hover:before {
 @media (max-width: 768px) {
   .infoWheather {
     flex-direction: column;
+    padding-left: 30px;
+    padding-bottom: 20px;
   }
+}
+@media (max-width: 992px) {
+  .weather {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+  .imageHouse{
+    padding-top: 30px;
+}
+
+@keyframes pulsing {
+  /* начало анимации - т.е. счего начнется */
+  0% {
+    transform: translateX(-70px);
+  }
+  /* как закончится анимация */
+  100% {
+    transform: translateX(70px);
+  }
+}
 }
