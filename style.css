@@ -126,11 +126,7 @@ button:hover:before {
   box-shadow: inset 0 0 25px;
   color: rgb(14, 121, 182);
 }
-.imageHouse{
-  /* position: relative; */
-  /* width: 50%; */
-  /* border: 1px solid rgb(19, 25, 202); */
-}
+
 .resultImage {
   /* position: absolute;
   top: 0;
